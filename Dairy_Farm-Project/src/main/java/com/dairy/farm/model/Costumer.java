@@ -23,18 +23,20 @@ public class Costumer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	private String costumerName;
-	
+
 	private long contactNo;
-	
+
 	private String emailId;
-	
+
 	private String address;
-	
+
 	private String milkType;
-	
+
 	private long quantity;
+	
+	private long idOfSociety;
 	
 	
 }
