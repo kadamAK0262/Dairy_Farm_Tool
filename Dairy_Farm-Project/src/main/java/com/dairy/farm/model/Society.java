@@ -1,9 +1,11 @@
 package com.dairy.farm.model;
 
+import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,30 +13,21 @@ import lombok.Setter;
 import lombok.ToString;
 
 
-@Getter
 @Setter
-@NoArgsConstructor
+@Getter
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString
-
+@Table(name="Society_table")
 @Entity
-public class Costumer {
-
+public class Society {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private int societyId;
 	
-	private String costumerName;
+	private String societyName;
 	
-	private long contactNo;
-	
-	private String emailId;
-	
-	private String address;
-	
-	private String milkType;
-	
-	private long quantity;
-	
-	
+	private int totalActiveCustomer;
+
 }

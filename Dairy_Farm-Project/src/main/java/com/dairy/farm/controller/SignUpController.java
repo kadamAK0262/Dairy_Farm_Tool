@@ -28,6 +28,7 @@ public class SignUpController {
 	
 	@PostMapping("/login")
 	public boolean login(@RequestBody LoginRequest loginRequest) {
+		
 	    boolean loginResult = serve.login(loginRequest.getEmail(), loginRequest.getPassword());
 
 	    if (loginResult) {
