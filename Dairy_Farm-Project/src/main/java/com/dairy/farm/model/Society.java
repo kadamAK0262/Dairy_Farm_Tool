@@ -24,9 +24,28 @@ public class Society {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+<<<<<<< HEAD:Dairy_Farm-Project/src/main/java/com/dairy/farm/model/Society.java
 	private int societyId;
 	
 	private String societyName;
+=======
+	private int id;
+
+	private String costumerName;
+
+	private long contactNo;
+
+	private String emailId;
+
+	private String address;
+
+	private String milkType;
+
+	private long quantity;
+	
+	private long idOfSociety;
+	
+>>>>>>> 1441e328283e576b9ba4c2f32c74d6f30ffc1618:Dairy_Farm-Project/src/main/java/com/dairy/farm/model/Costumer.java
 	
 	private int totalActiveCustomer;
 
