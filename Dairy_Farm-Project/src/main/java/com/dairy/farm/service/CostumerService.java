@@ -84,7 +84,7 @@ public class CostumerService {
 
 			long oldSocietyId = customer.getIdOfSociety(); // Get the old society ID
 
-			customer.setCostumerName(updatedCustomer.getCostumerName());
+			customer.setCustomerName(updatedCustomer.getCustomerName());
 			customer.setContactNo(updatedCustomer.getContactNo());
 			customer.setEmailId(updatedCustomer.getEmailId());
 			customer.setAddress(updatedCustomer.getAddress());

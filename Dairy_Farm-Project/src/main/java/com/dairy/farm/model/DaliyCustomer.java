@@ -2,55 +2,34 @@ package com.dairy.farm.model;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
-
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
-
+@Data
 @Entity
-public class Costumer {
+public class DaliyCustomer {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-//	private String costumerName;
-
 	private String customerName;
-
-	private long contactNo;
-
-	private String emailId;
-
 	private String address;
-
 	private String milkType;
-
 	private long quantity;
-	
-	private long idOfSociety;
-	
 	private int rate;
-	
 	private int outStandingBill;
-	
 	private int bill;
 
-    private String delivered;
+	private long idOfSociety;
 	
+    private String delivered ;
+
+	@Column(columnDefinition = "DATE")
 	private LocalDate checkDate;
-	
-	
+
 }
