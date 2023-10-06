@@ -12,6 +12,9 @@ import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { ToolbarComponent } from './home/toolbar/toolbar.component';
 import { CustomerTableComponent } from './home/customer-table/customer-table.component';
 import { CustomerComponent } from './home/customer/customer.component';
+import { SocietyComponent } from './home/distribution/society/society.component';
+import { ReportdashboardComponent } from './home/report/reportdashboard/reportdashboard.component';
+import { CustomerdetailsComponent } from './home/report/customerdetails/customerdetails.component';
 
 
 const routes: Routes = [
@@ -52,7 +55,18 @@ const routes: Routes = [
   {
     path : 'customer-table', component : CustomerTableComponent
   },
+  {
+    path : 'society', component :SocietyComponent
+  },
   
+  {
+    path : 'report', component :ReportdashboardComponent
+  },
+  {
+    path : 'customerDetails', component :CustomerdetailsComponent
+  },
+
+
   // {
   //   path : 'dashboard', children:[
   //     {

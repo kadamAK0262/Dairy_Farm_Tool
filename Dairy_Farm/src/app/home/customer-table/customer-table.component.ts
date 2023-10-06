@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { CustomerService } from 'src/app/services/customer.service';
-export interface Customer{
+import { CustomerComponent } from '../customer/customer.component';
+export class Customer{
   address:any;
   bill:any;
   checkDate:any;
@@ -13,17 +15,18 @@ export interface Customer{
   outStandingBill:any;
   quantity:any;
   rate:any;
+  action:any
 }
 @Component({
   selector: 'app-customer-table',
   templateUrl: './customer-table.component.html',
   styleUrls: ['./customer-table.component.css']
 })
-export class CustomerTableComponent {
+export class CustomerTableComponent  {
 
   customers: any[] = [];
 
-  constructor(private customerService: CustomerService) {}
+  constructor(private customerService: CustomerService,private MatDialog:MatDialog) {}
 
   displayedColumns: string[] = [
     'id',
@@ -38,9 +41,11 @@ export class CustomerTableComponent {
   'milkType',
       'outStandingBill',
    'quantity',
-  'rate'
+  'rate',
+  'action'
   ];
   customerList:any;
+  
   ngOnInit() {
     sessionStorage.getItem("society_id")
     // Fetch customer data when the component initializes
@@ -49,6 +54,11 @@ export class CustomerTableComponent {
      console.log("customer list is ",this.customerList);
      
     })
+  }
+
+  addCustomer(){
+      this.MatDialog.open(CustomerComponent)
+      width: '100%'
   }
 
 }

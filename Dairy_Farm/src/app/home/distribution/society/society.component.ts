@@ -77,6 +77,12 @@ export class SocietyComponent implements OnInit {
       console.log("hasdhadhkahdskhakhdkhdskj"+JSON.stringify(this.Societydata));
     })
   }
+  deletesociety(id:any){
+    this.singupservice.DeleteSociety(id).subscribe(data=>{
+      console.log("society deleted with id",id)
+    }
+    )
+  }
 
   getSocietId(SocietyId:any){
     sessionStorage.setItem("society_id",SocietyId);

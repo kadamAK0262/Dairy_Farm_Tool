@@ -36,7 +36,7 @@
       <mat-card class="example-card">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Daily Reports</mat-card-title>
+          <mat-card-title>Reports</mat-card-title>
           <mat-card-subtitle>Check Reports here</mat-card-subtitle>
         </mat-card-header>
         <img
@@ -50,6 +50,7 @@
             mat-raised-button
             color="primary"
             style="margin-top: 10%; margin-left: 35%"
+            (click)="getReportPage()"
           >
             Click
           </button>
@@ -61,7 +62,7 @@
       <mat-card class="example-card">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Client List</mat-card-title>
+          <mat-card-title>Daily Distrubution</mat-card-title>
           <mat-card-subtitle>To check clients</mat-card-subtitle>
         </mat-card-header>
         <img
@@ -76,8 +77,10 @@
             mat-raised-button
             color="primary"
             style="margin-top: 10%; margin-left: 35%"
+            (click)="getDistrubutionPage()"
           >
             Click
+      
           </button>
         </mat-card-actions>
       </mat-card>
@@ -85,7 +88,7 @@
       <mat-card class="example-card">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Daily Sales</mat-card-title>
+          <mat-card-title>Add New Customer</mat-card-title>
           <mat-card-subtitle>Check daily sales here</mat-card-subtitle>
         </mat-card-header>
         <img

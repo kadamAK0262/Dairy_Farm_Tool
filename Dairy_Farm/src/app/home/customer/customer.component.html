@@ -68,48 +68,100 @@
   </head>
   <body>
     <div class="container">
-      <h1>Customer Information Form</h1>
+      <!-- <h1>Customer Information Form</h1> -->
       <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
         <label for="costumerName">Customer Name:</label>
-        <input type="text" id="costumerName" formControlName="costumerName" />
-        <div
+        <input type="text" id="costumerName" formControlName="costumerName" [(ngModel)]="customer.customerName"  />
+        <!-- <div
           *ngIf="
             customerForm.get('costumerName')?.hasError('required') &&
             customerForm.get('costumerName')?.touched
           "
         >
           Customer Name is required.
-        </div>
+        </div> -->
 
-        <label for="contactNo">Contact Number:</label>
-        <input type="text" id="contactNo" formControlName="contactNo" />
-        <div
+        <label for="costumerName">Delivered:</label>
+        <input type="text" id="costumerAddress" formControlName="costumerAddress" [(ngModel)]="customer.delivered"  />
+        <!-- <div
+          *ngIf="
+            customerForm.get('costume rName')?.hasError('required') &&
+            customerForm.get('costumerName')?.touched
+          "
+        >
+          Customer Name is required.
+        </div> -->
+
+        <label for="costumerName">Date:</label>
+        <input type="text" id="costumerName" formControlName="costumerName" [(ngModel)]="customer.checkDate"  />
+        <!-- <div
+          *ngIf="
+            customerForm.get('costumerName')?.hasError('required') &&
+            customerForm.get('costumerName')?.touched
+          "
+        >
+          Customer Name is required.
+        </div> -->
+
+        <label for="costumerName">Customer contact no:</label>
+        <input type="text" id="costumerName" formControlName="costumerName" [(ngModel)]="customer.contactNo"  />
+        <!-- <div
+          *ngIf="
+            customerForm.get('costumerName')?.hasError('required') &&
+            customerForm.get('costumerName')?.touched
+          "
+        >
+          Customer Name is required.
+        </div> -->
+
+        <label for="contactNo">Contact email:</label>
+        <input type="text" id="contactNo" formControlName="contactNo" [(ngModel)]="customer.emailId"/>
+        <!-- <div
+          *ngIf="
+            customerForm.get('contactNo')?.hasError('required') &&
+            customerForm.get('contactNo')?.touched
+          "
+        >
+        </div> -->
+        <label for="contactNo">rate:</label>
+        <input type="text" id="contactNo" formControlName="contactNo" [(ngModel)]="customer.rate"/>
+        <!-- <div
           *ngIf="
             customerForm.get('contactNo')?.hasError('required') &&
             customerForm.get('contactNo')?.touched
           "
         >
           Contact Number is required.
-        </div>
-        <div
+        </div> -->
+        <!-- <div
           *ngIf="
             customerForm.get('contactNo')?.hasError('pattern') &&
             customerForm.get('contactNo')?.touched
           "
         >
           Invalid contact number format. Please enter a 10-digit number.
-        </div>
+        </div> -->
 
-        <label for="emailId">Email ID:</label>
-        <input type="text" id="emailId" formControlName="emailId" />
-        <div
+        <label for="emailId">id OF Society</label>
+        <input type="text" id="emailId" formControlName="emailId" [(ngModel)]="customer.idOfSociety"/>
+        <!-- <div
           *ngIf="
             customerForm.get('emailId')?.hasError('email') &&
             customerForm.get('emailId')?.touched
           "
         >
           Invalid email address format.
-        </div>
+        </div> -->
+        <label for="emailId">Bill:</label>
+        <input type="text" id="emailId" formControlName="emailId" [(ngModel)]="customer.bill"/>
+        <!-- <div
+          *ngIf="
+            customerForm.get('emailId')?.hasError('email') &&
+            customerForm.get('emailId')?.touched
+          "
+        >
+          Invalid email address format.
+        </div> -->
 
         <label for="address">Address:</label>
         <textarea
@@ -117,31 +169,35 @@
           formControlName="address"
           rows="4"
           cols="50"
+          [(ngModel)]="customer.address"
         ></textarea>
 
         <label for="milkType">Milk Type:</label>
-        <select id="milkType" formControlName="milkType">
+        <select id="milkType" formControlName="milkType" [(ngModel)]="customer.milkType">
           <option value="Regular">Cow</option>
           <option value="Skimmed">Buffelow</option>
           <option value="Whole">Mix</option>
         </select>
 
         <label for="quantity">Quantity (liters):</label>
-        <input type="text" id="quantity" formControlName="quantity" />
-        <div
+        <input type="text" id="quantity" formControlName="quantity" [(ngModel)]="customer.quantity"/>
+        <!-- <div
           *ngIf="
             customerForm.get('quantity')?.hasError('required') &&
             customerForm.get('quantity')?.touched
           "
         >
           Quantity is required.
-        </div>
+        </div> -->
+
+        <label for="emailId">out standing bill</label>
+        <input type="text" id="emailId" formControlName="emailId" [(ngModel)]="customer.outStandingBill"/>
 
         <button
           mat-raised-button
           color="primary"
           type="submit"
-          [disabled]="customerForm.invalid"
+         
         >
           Submit
         </button>

@@ -31,12 +31,10 @@ export class SignupService {
     return this.http.post("http://localhost:8081/api/addSociety",Society) 
    }
 
-
-   //get customer by society id
-   getcustomerbyid(societyId:any){
-    return this.http.get("http://localhost:8081/api/customersBySocietyId/${societyId}")
-
+   DeleteSociety(id:any){
+    return this.http.delete(`http://localhost:8081/api/deleteSociety/${id}`)
    }
+  
   private handleError(error: HttpErrorResponse): Observable<never> {
     let errorMessage = 'An error occurred';
     if (error.error instanceof ErrorEvent) {
