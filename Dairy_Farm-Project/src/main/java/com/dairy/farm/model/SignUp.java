@@ -25,4 +25,6 @@ public class SignUp {
 	private String email;
 	private String password;
 	
+	
+	
 }
