@@ -26,10 +26,19 @@ export class CustomerService {
   //   return this.http.get<any[]>(this.getCustomerurl);
   // }
 
-   //get customer by society id
-   getcustomerbyid(societyId:any){
-    return this.http.get(`http://localhost:8081/api/customersBySocietyId/${societyId}`)
+   //get customer daily data by society id
+   getDailycustomerbyid(societyId:any){
+    return this.http.get(`http://localhost:8081/dailyCustomers/societyId/${societyId}`)
 
+   }
+
+   getAllCustomerData(){
+    return this.http.get(`http://localhost:8081/api/getCostumer`)
+   }
+
+
+   deleteCustomerById(id:any){
+    return this.http.delete(`http://localhost:8081/api/deleteCustomer/${id}`)
    }
 
   private handleError(error: HttpErrorResponse): Observable<never> {

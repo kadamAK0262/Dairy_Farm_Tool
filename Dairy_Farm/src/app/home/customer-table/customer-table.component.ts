@@ -33,10 +33,10 @@ export class CustomerTableComponent  {
     'address',
      'bill',
      'checkDate',
-     'contactNo',
+    //  'contactNo',
   'customerName',
   'delivered',
-  'emailId',
+  // 'emailId',
   'idOfSociety',
   'milkType',
       'outStandingBill',
@@ -49,7 +49,7 @@ export class CustomerTableComponent  {
   ngOnInit() {
     sessionStorage.getItem("society_id")
     // Fetch customer data when the component initializes
-    this.customerService.getcustomerbyid(sessionStorage.getItem("society_id")).subscribe(response=>{
+    this.customerService.getDailycustomerbyid(sessionStorage.getItem("society_id")).subscribe(response=>{
      this.customerList=response;
      console.log("customer list is ",this.customerList);
      
