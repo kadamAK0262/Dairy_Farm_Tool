@@ -28,7 +28,7 @@ export class CustomerService {
 
    //get customer daily data by society id
    getDailycustomerbyid(societyId:any){
-    return this.http.get(`http://localhost:8081/dailyCustomers/societyId/${societyId}`)
+    return this.http.get(`http://localhost:8081/api/customersBySocietyId/${societyId}`)
 
    }
 
@@ -39,6 +39,15 @@ export class CustomerService {
 
    deleteCustomerById(id:any){
     return this.http.delete(`http://localhost:8081/api/deleteCustomer/${id}`)
+   }
+
+
+   // add list of data to daily customer table 
+   saveDataList(dataList: any) {
+    return this.http.post(`http://localhost:8081/dailyCustomers/addListOfDailyCustomer`,  dataList );
+  }
+   getDailyCustomerDataFromCustomerTable(){
+    return this.http.get(`http://localhost:8081/dailyCustomers/addCustomerToDailyCustomer`)
    }
 
   private handleError(error: HttpErrorResponse): Observable<never> {

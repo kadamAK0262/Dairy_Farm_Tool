@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { CustomerService } from 'src/app/services/customer.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,13 +8,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  constructor(private router : Router ){}
+  constructor(private router : Router ,private customerService: CustomerService){}
   getDistrubutionPage(){
     this.router.navigate(['/society'])
   }
 
   getReportPage(){
     this.router.navigate(['/report'])
+  }
+  getDistrubutionDataToTable(){
+    this.customerService.getDailyCustomerDataFromCustomerTable().subscribe(data=>{
+      console.log("data added to customer table")
+    })
   }
 
 }

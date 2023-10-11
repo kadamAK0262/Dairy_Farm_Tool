@@ -32,20 +32,20 @@ export class CustomerdetailsComponent {
   id:any;
   ngOnInit() {
    
-    this.getDataBySocietyId()
+    // this.getDataBySocietyId()
     this.deleteCustomer(this.id);
   }
 
-  getDataBySocietyId(){
-    sessionStorage.getItem("society_id")
-    // Fetch customer data when the component initializes
-    this.customerService.getAllCustomerData().subscribe(response=>{
-     this.customerList=response;
-     console.log("customer list is ",this.customerList);
+  // getDataBySocietyId(){
+  //   sessionStorage.getItem("society_id")
+  //   // Fetch customer data when the component initializes
+  //   this.customerService.getAllCustomerData().subscribe(response=>{
+  //    this.customerList=response;
+  //    console.log("customer list is ",this.customerList);
      
-    })
+  //   })
 
-  }
+  // }
   deleteCustomer(id:any){
     this.customerService.deleteCustomerById(id).subscribe(data=>{   
     console.log("deleted",id)
